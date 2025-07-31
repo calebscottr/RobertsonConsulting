@@ -145,12 +145,6 @@ body {
   margin-bottom: 10px;
 }
 
-.card h4 {
-  margin-top: 15px;
-  font-weight: normal;
-  color: #555;
-}
-
 /* CTA Button */
 .cta-button {
   background-color: #f59e0b;
