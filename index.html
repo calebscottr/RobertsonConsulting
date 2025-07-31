@@ -7,45 +7,60 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <h1>Robertson Consulting</h1>
-    <p>Strategic Insight. Real Results.</p>
+  <header class="navbar">
+    <div class="logo">Robertson</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="section reveal">
-    <h2>Our Mission</h2>
-    <p>Empowering businesses through expert consulting and innovative solutions.</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Strategic Consulting for the Modern Enterprise</h1>
+      <p>We help businesses unlock growth through insight, innovation, and execution.</p>
+      <a href="#contact" class="cta-button">Let’s Talk</a>
+    </div>
   </section>
 
-  <section class="section reveal alt">
-    <h2>What We Do</h2>
-    <p>From strategy to execution, we help you scale with confidence.</p>
+  <section id="about" class="section fade-in">
+    <h2>About Us</h2>
+    <p>Robertson Consulting is a boutique firm specializing in business transformation, digital strategy, and operational excellence.</p>
   </section>
 
-  <section class="section reveal">
-    <h2>Why Choose Us</h2>
-    <p>Decades of experience. Proven results. A partner you can trust.</p>
+  <section id="services" class="section alt fade-in">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Strategy</h3>
+        <p>We craft data-driven strategies that align with your business goals.</p>
+      </div>
+      <div class="card">
+        <h3>Operations</h3>
+        <p>Streamline processes and improve efficiency across your organization.</p>
+      </div>
+      <div class="card">
+        <h3>Technology</h3>
+        <p>Leverage modern tools to drive innovation and digital transformation.</p>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Robertson Consulting. All rights reserved.</p>
-  </footer>
+  <section id="clients" class="section fade-in">
+    <h2>Our Clients</h2>
+    <p>We’ve partnered with Fortune 500 companies, startups, and everything in between.</p>
+    <div class="logos">
+      <div class="logo-placeholder">Client A</div>
+      <div class="logo-placeholder">Client B</div>
+      <div class="logo-placeholder">Client C</div>
+    </div>
+  </section>
 
-  <script>
-    const reveals = document.querySelectorAll(".reveal");
-    window.addEventListener("scroll", () => {
-      for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 150;
-
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
-        } else {
-          reveals[i].classList.remove("active");
-        }
-      }
-    });
-  </script>
-</body>
-</html>
+  <section id="contact" class="section alt fade-in">
+    <h2>Contact Us</h2>
+    <p>Ready to elevate your business? Let’s connect.</p>
+    <form class="contact-form
