@@ -4,63 +4,126 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Robertson Consulting</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">Robertson</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#clients">Clients</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+
+  <nav class="navbar">
+    <div class="logo">Robertson<span>Consulting</span></div>
+    <ul class="nav-links">
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero-section">
+    <video autoplay muted loop class="bg-video">
+      <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h1>Strategic Brilliance</h1>
+      <p>Transforming vision into value</p>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Strategic Consulting for the Modern Enterprise</h1>
-      <p>We help businesses unlock growth through insight, innovation, and execution.</p>
-      <a href="#contact" class="cta-button">Let’s Talk</a>
-    </div>
+  <section id="mission" class="section reveal parallax">
+    <h2>Our Mission</h2>
+    <p>We empower organizations to lead with clarity, confidence, and purpose.</p>
   </section>
 
-  <section id="about" class="section fade-in">
-    <h2>About Us</h2>
-    <p>Robertson Consulting is a boutique firm specializing in business transformation, digital strategy, and operational excellence.</p>
-  </section>
-
-  <section id="services" class="section alt fade-in">
+  <section id="services" class="section reveal alt">
     <h2>Our Services</h2>
     <div class="cards">
       <div class="card">
         <h3>Strategy</h3>
-        <p>We craft data-driven strategies that align with your business goals.</p>
+        <p>Tailored roadmaps for sustainable growth.</p>
       </div>
       <div class="card">
-        <h3>Operations</h3>
-        <p>Streamline processes and improve efficiency across your organization.</p>
+        <h3>Innovation</h3>
+        <p>Cutting-edge solutions for modern challenges.</p>
       </div>
       <div class="card">
-        <h3>Technology</h3>
-        <p>Leverage modern tools to drive innovation and digital transformation.</p>
+        <h3>Execution</h3>
+        <p>From planning to performance, we deliver.</p>
       </div>
     </div>
   </section>
 
-  <section id="clients" class="section fade-in">
-    <h2>Our Clients</h2>
-    <p>We’ve partnered with Fortune 500 companies, startups, and everything in between.</p>
-    <div class="logos">
-      <div class="logo-placeholder">Client A</div>
-      <div class="logo-placeholder">Client B</div>
-      <div class="logo-placeholder">Client C</div>
+  <section id="products" class="section reveal">
+    <h2>Our Products</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Insight Engine</h3>
+        <p>AI-powered analytics for smarter decisions.</p>
+      </div>
+      <div class="card">
+        <h3>Growth Tracker</h3>
+        <p>Monitor KPIs and performance in real-time.</p>
+      </div>
+    </div>
+    <div id="chart" style="width:100%;max-width:700px;margin:40px auto;"></div>
+  </section>
+
+  <section id="testimonials" class="section reveal alt">
+    <h2>Testimonials</h2>
+    <div class="cards">
+      <div class="card">
+        <p>"Robertson Consulting transformed our business strategy. Highly recommended!"</p>
+        <h4>- CEO, TechNova</h4>
+      </div>
+      <div class="card">
+        <p>"Professional, insightful, and results-driven. A true partner in growth."</p>
+        <h4>- Founder, GreenEdge</h4>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="section alt fade-in">
-    <h2>Contact Us</h2>
-    <p>Ready to elevate your business? Let’s connect.</p>
-    <form class="contact-form
+  <section id="contact" class="section reveal">
+    <h2>Let’s Connect</h2>
+    <p>Ready to elevate your business? Let’s talk.</p>
+    <button class="cta-button">Schedule a Consultation</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Robertson Consulting. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", () => {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    });
+
+    const chartData = [{
+      x: ['Q1', 'Q2', 'Q3', 'Q4'],
+      y: [120, 190, 300, 250],
+      type: 'bar',
+      marker: {color: '#2563eb'}
+    }];
+
+    const chartLayout = {
+      title: 'Quarterly Growth',
+      paper_bgcolor: '#f3f4f6',
+      plot_bgcolor: '#f3f4f6'
+    };
+
+    Plotly.newPlot('chart', chartData, chartLayout);
+  </script>
+
+</body>
+</html>
