@@ -1,13 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Robertson Consulting</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Welcome to Robertson Consulting</h1>
-  <p>Business transformation consulting for federal clients and beyond.</p>
-  <p>Contact: yourname@email.com</p>
+  <header class="hero">
+    <h1>Robertson Consulting</h1>
+    <p>Strategic Insight. Real Results.</p>
+  </header>
+
+  <section class="section reveal">
+    <h2>Our Mission</h2>
+    <p>Empowering businesses through expert consulting and innovative solutions.</p>
+  </section>
+
+  <section class="section reveal alt">
+    <h2>What We Do</h2>
+    <p>From strategy to execution, we help you scale with confidence.</p>
+  </section>
+
+  <section class="section reveal">
+    <h2>Why Choose Us</h2>
+    <p>Decades of experience. Proven results. A partner you can trust.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Robertson Consulting. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", () => {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    });
+  </script>
 </body>
 </html>
